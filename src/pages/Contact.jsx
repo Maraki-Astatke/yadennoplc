@@ -40,12 +40,9 @@ export default function Contact() {
 
             <div>
               <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-accent mb-1">
-                {t('contact_managing_director')}
+                Factory
               </h3>
-              <p className="font-semibold text-primary">Fisseha K/mariam</p>
-              <div className="mt-1 flex flex-col gap-1 text-steel sm:flex-row sm:gap-4">
-                <a href="mailto:fisseha@nanfisha.com" className="hover:text-accent transition-colors">fisseha@nanfisha.com</a>
-              </div>
+              <p className="font-semibold text-primary leading-relaxed">Ashewa Meda, Tatek Industry Zone, Sheger City</p>
             </div>
 
             <a href="mailto:yadennoplc@gmail.com" className="border-l-4 border-accent pl-4 hover:text-accent transition-colors">

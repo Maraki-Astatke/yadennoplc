@@ -19,7 +19,7 @@ export default function Hero() {
           <p className="mt-4 max-w-xl text-base leading-7 text-steel-dark sm:text-lg">{t('hero_description')}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link to="/contact#quote" className="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-primary px-6 py-3.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-primary-light">{t('nav_quote')}</Link>
-            <Link to="/products" className="inline-flex min-h-[52px] items-center justify-center rounded-lg border-2 border-primary px-6 py-3 font-bold text-primary transition hover:bg-primary hover:text-white">{t('hero_cta')}</Link>
+            <Link to="/products" className="inline-flex min-h-[52px] items-center justify-center rounded-lg border-2 border-primary px-6 py-3 font-bold text-primary transition hover:bg-primary/10 hover:-translate-y-0.5">{t('hero_cta')}</Link>
           </div>
           <div className="mt-9 grid grid-cols-3 gap-3 border-t border-primary/15 pt-6">
             <div><strong className="block text-base text-primary sm:text-xl">50–250 mm</strong><span className="text-[10px] font-bold uppercase tracking-wider text-steel">{t('home_spec_diameter')}</span></div>
