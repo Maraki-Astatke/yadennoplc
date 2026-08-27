@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#eaf6fc] pt-28 sm:pt-32" aria-label="Yadenno Plastics PLC hero">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_16%,rgba(255,255,255,.95),transparent_38%)]" aria-hidden="true" />
-      <div className="section-container relative grid min-h-[660px] items-center gap-8 py-12 lg:grid-cols-[1.03fr_.97fr] lg:gap-14 lg:py-16">
+      <div className="section-container relative grid items-center gap-8 py-12 lg:grid-cols-[1.03fr_.97fr] lg:gap-14 lg:py-16">
         <div className="max-w-2xl">
           <p className="mb-5 flex items-center gap-3 text-xs font-black uppercase tracking-[.18em] text-accent before:h-[3px] before:w-9 before:bg-accent">
             {t('hero_certified')}
@@ -28,7 +28,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative min-h-[390px] lg:min-h-[560px]">
+        <div className="relative h-[30vh] lg:h-auto lg:min-h-[560px]">
           <div className="absolute inset-0 overflow-hidden rounded-[30px_30px_8px_30px] border border-[#c7e1ee] bg-white shadow-[0_28px_75px_rgba(19,45,70,.16)]">
             <img
               src="/orange-bg.webp"

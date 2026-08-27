@@ -33,10 +33,11 @@ export default function Contact() {
               <p className="text-steel leading-relaxed">{t('contact_office_address')}</p>
             </div>
 
-            <a href="tel:+251961363636" className="border-l-4 border-accent pl-4 hover:text-accent transition-colors">
+            <div className="border-l-4 border-accent pl-4">
               <span className="block text-xs font-mono font-bold uppercase tracking-widest text-accent">{t('contact_call_sales')}</span>
-              <span className="mt-1 block text-lg font-semibold text-primary">+251 961 36 36 36</span>
-            </a>
+              <a href="tel:+251961363636" className="mt-1 block text-lg font-semibold text-primary hover:text-accent transition-colors">+251 961 36 36 36</a>
+              <a href="tel:+251967363636" className="block text-lg font-semibold text-primary hover:text-accent transition-colors">+251 967 36 36 36</a>
+            </div>
 
             <div>
               <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-accent mb-1">
@@ -47,8 +48,8 @@ export default function Contact() {
 
             <div className="border-l-4 border-accent pl-4">
               <span className="block text-xs font-mono font-bold uppercase tracking-widest text-accent">{t('contact_email')}</span>
-              <a href="mailto:yadennoplc@gmail.com" className="mt-1 block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">yadennoplc@gmail.com</a>
-              <a href="mailto:hello@yadenno.com" className="block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">hello@yadenno.com</a>
+              <a href="mailto:hello@yadenno.com" className="mt-1 block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">hello@yadenno.com</a>
+              <a href="mailto:yadennoplc@gmail.com" className="block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">yadennoplc@gmail.com</a>
             </div>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Logo — far left. Text wordmark "YADENNO" is the primary brand mark;
             the small svg mark from src/assets is used as an accent icon. */}
         <Link to="/" className="flex items-center shrink-0" onClick={() => setMobileOpen(false)}>
-          <img src="/logo.webp" alt="Yadenno Plastics PLC" className="h-12 sm:h-16 w-auto opacity-100" />
+          <img src="/logo.webp" alt="Yadenno Plastics PLC" className="h-[82px] sm:h-[98px] w-auto opacity-100" />
         </Link>
 
         {/* Center nav links (desktop) */}
