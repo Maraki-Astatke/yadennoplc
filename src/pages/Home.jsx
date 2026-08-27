@@ -279,10 +279,11 @@ export default function Home() {
                   <p className="font-semibold text-primary leading-relaxed">Ashewa Meda, Tatek Industry Zone, Sheger City</p>
                 </div>
 
-                <a href="mailto:yadennoplc@gmail.com" className="border-l-4 border-accent pl-4 hover:text-accent transition-colors">
+                <div className="border-l-4 border-accent pl-4">
                   <span className="block text-xs font-mono font-bold uppercase tracking-widest text-accent">{t('home_email')}</span>
-                  <span className="mt-1 block break-all text-lg font-semibold text-primary">yadennoplc@gmail.com</span>
-                </a>
+                  <a href="mailto:yadennoplc@gmail.com" className="mt-1 block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">yadennoplc@gmail.com</a>
+                  <a href="mailto:hello@yadenno.com" className="block break-all text-lg font-semibold text-primary hover:text-accent transition-colors">hello@yadenno.com</a>
+                </div>
               </div>
             </div>
 
