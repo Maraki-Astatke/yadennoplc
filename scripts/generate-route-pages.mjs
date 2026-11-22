@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
-const baseUrl = 'https://yade.vercel.app'
+const baseUrl = 'https://yadenno.com'
 const routes = {
   '/': {
     title: 'UPVC Pipe Manufacturer in Ethiopia | Yadenno Plastics PLC',
