@@ -4,7 +4,7 @@ import QuoteForm from '../components/QuoteForm.jsx'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   const reasons = [
     { title: t('home_why_1_title'), desc: t('home_why_1_desc'), icon: '✅' },
@@ -33,7 +33,7 @@ export default function Home() {
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">{t('home_spec_quality')}</span>
             </div>
             <div className="flex flex-col items-center justify-center gap-1 px-4 py-6 sm:py-8 text-center border-t sm:border-t-0 sm:border-l border-accent hover:bg-accent/5 transition-colors duration-300">
-              <span className="text-xl sm:text-2xl font-medium tracking-tight text-primary">Ethiopia</span>
+              <span className="text-xl sm:text-2xl font-medium tracking-tight text-primary">{t('hero_country')}</span>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent">{t('home_supply_title')}</span>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
               ))}
             </ul>
 
-            <Link to="/about" className="btn-accent inline-flex w-fit items-center gap-2 mt-0 rounded-md px-6 py-3 shadow-xl shadow-accent/20">
+            <Link to={localePath('/about')} className="btn-accent inline-flex w-fit items-center gap-2 mt-0 rounded-md px-6 py-3 shadow-xl shadow-accent/20">
               {t('home_read_more')}
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -138,7 +138,7 @@ export default function Home() {
                   <h3 className="text-lg sm:text-xl font-extrabold text-white">{product.title}</h3>
                   <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">{product.description}</p>
                   <p className="text-white font-semibold text-xs sm:text-sm">{product.specification}</p>
-                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent hover:text-accent-light transition-colors">
+                  <Link to={localePath('/contact')} className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent hover:text-accent-light transition-colors">
                     {t('home_request_specs')}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -151,7 +151,7 @@ export default function Home() {
 
           <div className="mt-8 flex justify-center">
             <Link
-              to="/products"
+              to={localePath('/products')}
               className="inline-flex items-center gap-2 border-2 border-white bg-transparent text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 hover:bg-accent hover:border-accent hover:-translate-y-0.5"
             >
               {t('home_see_all')}
@@ -233,7 +233,7 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-relaxed text-steel">
                   {t('home_supply_desc')}
                 </p>
-                <Link to="/contact" className="btn-accent mt-6 inline-flex items-center gap-2">
+                <Link to={localePath('/contact')} className="btn-accent mt-6 inline-flex items-center gap-2">
                   {t('home_discuss_order')}
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -275,9 +275,9 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-accent mb-1">
-                    Factory
+                    {t('footer_factory')}
                   </h3>
-                  <p className="font-semibold text-primary leading-relaxed">Ashewa Meda, Tatek Industry Zone, Sheger City</p>
+                  <p className="font-semibold text-primary leading-relaxed">{t('contact_info_address')}</p>
                 </div>
 
                 <div className="border-l-4 border-accent pl-4">
@@ -297,7 +297,7 @@ export default function Home() {
         <div className="section-container py-20 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{t('home_cta_title')}</h2>
           <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mb-8">{t('home_cta_desc')}</p>
-          <Link to="/contact" className="btn-accent">
+          <Link to={localePath('/contact')} className="btn-accent">
             {t('home_cta_button')}
           </Link>
         </div>

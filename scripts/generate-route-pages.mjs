@@ -1,44 +1,48 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-
-const baseUrl = 'https://yadenno.com'
-const routes = {
-  '/': {
-    title: 'UPVC Pipe Manufacturer in Ethiopia | Yadenno Plastics PLC',
-    description: 'Yadenno Plastics PLC manufactures certified UPVC pressure and sewerage pipes from 50–250 mm and PN4–PN16 in Ethiopia.',
-  },
-  '/products': {
-    title: 'UPVC Pressure & Sewerage Pipes | Yadenno Plastics Ethiopia',
-    description: 'Explore Yadenno UPVC pressure and sewerage pipes for water supply, irrigation, boreholes and drainage projects across Ethiopia.',
-  },
-  '/about': {
-    title: 'About Yadenno Plastics PLC | Ethiopian UPVC Pipe Manufacturer',
-    description: 'Learn about Yadenno Plastics PLC, its Tatek Industry Zone factory, quality controls and certified UPVC pipe manufacturing in Ethiopia.',
-  },
-  '/contact': {
-    title: 'Request an UPVC Pipe Quote | Yadenno Plastics Ethiopia',
-    description: 'Request factory pricing, availability and delivery support for Yadenno UPVC pipes. Contact sales by WhatsApp, phone or email.',
-  },
-}
+import { PAGE_META, OG_LOCALE, localePath, absoluteUrl } from '../src/data/pageMeta.js'
 
 const template = await readFile('dist/index.html', 'utf8')
 
-for (const [route, meta] of Object.entries(routes)) {
-  const url = `${baseUrl}${route === '/' ? '' : route}`
-  const html = template
-    .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
-    .replace(/<meta name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${meta.description}" />`)
-    .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${url}" />`)
-    .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${meta.title}" />`)
-    .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${meta.description}" />`)
-    .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${url}" />`)
+for (const [path, languages] of Object.entries(PAGE_META)) {
+  const enUrl = absoluteUrl(path)
+  const amUrl = absoluteUrl(localePath(path, 'am'))
 
-  if (route === '/') {
-    await writeFile('dist/index.html', html)
-  } else {
-    const directory = `dist${route}`
-    await mkdir(directory, { recursive: true })
-    await writeFile(`${directory}/index.html`, html)
+  for (const [lang, meta] of Object.entries(languages)) {
+    const outputPath = localePath(path, lang)
+    const url = absoluteUrl(outputPath)
+    const otherLang = lang === 'am' ? 'en' : 'am'
+
+    // Canonical plus hreflang: tells Google these pages are the same content in two languages
+    const linkTags = [
+      `<link rel="canonical" href="${url}" />`,
+      `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+      `<link rel="alternate" hreflang="am" href="${amUrl}" />`,
+      `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+    ].join('\n  ')
+
+    const ogTags = [
+      `<meta property="og:url" content="${url}" />`,
+      `<meta property="og:locale" content="${OG_LOCALE[lang]}" />`,
+      `<meta property="og:locale:alternate" content="${OG_LOCALE[otherLang]}" />`,
+    ].join('\n  ')
+
+    const html = template
+      .replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
+      .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
+      .replace(/<meta name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${meta.description}" />`)
+      .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, linkTags)
+      .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${meta.title}" />`)
+      .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${meta.description}" />`)
+      .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, ogTags)
+
+    if (outputPath === '/') {
+      await writeFile('dist/index.html', html)
+    } else {
+      const directory = `dist${outputPath}`
+      await mkdir(directory, { recursive: true })
+      await writeFile(`${directory}/index.html`, html)
+    }
   }
 }
 
-console.log('Generated route-specific HTML metadata for /, /products, /about and /contact.')
+console.log('Generated English and Amharic HTML for /, /products, /about and /contact (8 pages).')

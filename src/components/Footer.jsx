@@ -23,8 +23,10 @@ export default function Footer() {
           <h4 className="text-white font-semibold leading-6 mb-3">{t('contact_info_title')}</h4>
           <ul className="space-y-2 text-base text-gray-400">
             <li>{t('contact_info_address')}</li>
-            <li>{t('contact_info_phone')}</li>
-            <li>{t('contact_info_email')}</li>
+            <li><a href="tel:+251961363636" className="hover:text-white transition-colors">+251 961 36 36 36</a></li>
+            <li><a href="tel:+251967363636" className="hover:text-white transition-colors">+251 967 36 36 36</a></li>
+            <li><a href="mailto:hello@yadenno.com" className="break-all hover:text-white transition-colors">{t('contact_info_email_2')}</a></li>
+            <li><a href="mailto:yadennoplc@gmail.com" className="break-all hover:text-white transition-colors">{t('contact_info_email')}</a></li>
           </ul>
         </div>
 

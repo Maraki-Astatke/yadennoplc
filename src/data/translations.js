@@ -1,5 +1,3 @@
-// Simple EN / AMH translation dictionary used across the site.
-// Keep keys flat and descriptive so any component can pull from it via t('key').
 export const translations = {
   en: {
     // Navbar
@@ -29,6 +27,8 @@ export const translations = {
     hero_manufacturer: 'UPVC Pipe Manufacturer',
     hero_location: 'Tatek Industry Zone',
     hero_country: 'Ethiopia',
+    hero_badge_title: 'QUALITY',
+    hero_badge_desc: 'Checked pipe by pipe',
 
     // Home page extras
     home_why_title: 'Why Yadenno',
@@ -84,7 +84,7 @@ export const translations = {
     home_app_downpipes: 'Downpipes',
     home_factory_from: 'From our factory in',
     home_factory_location: 'Tatek Industry Zone,',
-    home_factory_city: 'Burayu, Oromia',
+    home_factory_city: 'Sheger City, Oromia',
     home_supply_title: 'Supply across Ethiopia',
     home_supply_desc: 'Reliable factory supply with free Addis Ababa delivery on qualifying bulk orders.',
     home_discuss_order: 'Discuss your order',
@@ -186,14 +186,15 @@ export const translations = {
     contact_form_submit: 'Send Message',
     contact_form_success: 'Your quotation details are ready in WhatsApp. Review the message, then tap send.',
     contact_info_title: 'Get in Touch',
-    contact_info_address: 'Tatek Industry Zone, Burayu, Oromia, Ethiopia',
+    contact_info_address: 'Tatek Industry Zone, Sheger City, Oromia, Ethiopia',
     contact_info_phone: '+251 961 36 36 36',
     contact_info_email: 'yadennoplc@gmail.com',
+    contact_info_email_2: 'hello@yadenno.com',
     contact_info_hours: 'Mon – Sat: 8:00 AM – 6:00 PM',
 
     // Footer
     footer_factory: 'Factory',
-    footer_factory_address: 'Tatek Industry Zone\nBurayu, Oromia, Ethiopia',
+    footer_factory_address: 'Tatek Industry Zone\nSheger City, Oromia, Ethiopia',
     footer_working_hours: 'Working Hours',
     footer_working_days: 'Monday–Saturday',
     footer_working_time: '8:00 AM–6:00 PM',
@@ -214,7 +215,7 @@ export const translations = {
     hero_tagline: 'ጠንካራ ቧንቧዎች። አስተማማኝ ፕሮጀክቶች።',
     hero_certified: 'የተረጋገጠ',
     hero_description:
-      'በተከት ኢንዱስትሪ ዞን የሚመረቱ የUPVC የጫና እና የፍሳሽ ቧንቧዎች ለውሃ፣ ለመስኖ እና ለመሰረተ ልማት ፕሮጀክቶች።',
+      'በታጠቅ ኢንዱስትሪ ዞን የሚመረቱ የUPVC የጫና እና የፍሳሽ ቧንቧዎች ለውሃ፣ ለመስኖ እና ለመሰረተ ልማት ፕሮጀክቶች።',
     hero_cta: 'ቧንቧዎቻችንን ይመልከቱ',
     hero_whatsapp: 'የWhatsApp ሽያጭ',
     hero_hint: 'ለማየት ይሸብቡ',
@@ -224,8 +225,10 @@ export const translations = {
     hero_hint_mobile_prefix: 'ለማየት',
     hero_hint_mobile_accent: 'ይንኩ',
     hero_manufacturer: 'የUPVC ቧንቧ አምራች',
-    hero_location: 'ተከት ኢንዱስትሪ ዞን',
+    hero_location: 'ታጠቅ ኢንዱስትሪ ዞን',
     hero_country: 'ኢትዮጵያ',
+    hero_badge_title: 'ጥራት',
+    hero_badge_desc: 'በእያንዳንዱ ቧንቧ የተረጋገጠ',
 
     home_why_title: 'ለምን ያደኖ',
     home_why_1_title: 'የተረጋገጠ ጥራት',
@@ -233,7 +236,7 @@ export const translations = {
     home_why_2_title: 'የተመቻቸ ክልል',
     home_why_2_desc: 'ከPN4 እስከ PN16፣ ከ50ሚሜ እስከ 250ሚሜ ዲያሜትር ለመጠጥ ውሃ፣ ለመስኖ እና ለፍሳሽ አገልግሎት።',
     home_why_3_title: 'የአገር ውስጥ ማምረቻ',
-    home_why_3_desc: 'በተከት ኢንዱስትሪ ዞን የሚመረት ለአስተማማኝ የአገር ውስጥ አቅርቦት።',
+    home_why_3_desc: 'በታጠቅ ኢንዱስትሪ ዞን የሚመረት ለአስተማማኝ የአገር ውስጥ አቅርቦት።',
     home_read_more: 'ተጨማሪ ያንብቡ',
     home_spec_diameter: 'ሚሜ ዲያሜትር',
     home_spec_pressure: 'የጫና ደረጃዎች',
@@ -279,8 +282,8 @@ export const translations = {
     home_app_conduit: 'የኤሌክትሪክ ኮንዱይት',
     home_app_downpipes: 'የዝናብ ውሃ ቧንቧዎች',
     home_factory_from: 'ከፋብሪካችን',
-    home_factory_location: 'ተከት ኢንዱስትሪ ዞን፣',
-    home_factory_city: 'ቡራዩ፣ ኦሮሚያ',
+    home_factory_location: 'ታጠቅ ኢንዱስትሪ ዞን፣',
+    home_factory_city: 'ሸገር ከተማ፣ ኦሮሚያ',
     home_supply_title: 'በመላው ኢትዮጵያ አቅርቦት',
     home_supply_desc: 'በብቁ የጅምላ ትዕዛዞች ላይ በአዲስ አበባ ነፃ ማድረስ ያለው አስተማማኝ የፋብሪካ አቅርቦት።',
     home_discuss_order: 'ስለ ትዕዛዝዎ ይወያዩ',
@@ -343,11 +346,11 @@ export const translations = {
 
     about_title: 'ስለ ያደኖ ፕላስቲክስ ኃ.የተ.የግ.ማ',
     about_intro:
-      'ያደኖ ፕላስቲክስ ኃ.የተ.የግ.ማ በተከት ኢንዱስትሪ ዞን የሚገኝ የኢትዮጵያ UPVC ቧንቧ አምራች ሲሆን ለግንባታ፣ ለውሃ አገልግሎት እና ለመስኖ ዘርፎች የጫና እና የፍሳሽ ቧንቧ ስርዓቶችን ያመርታል።',
+      'ያደኖ ፕላስቲክስ ኃ.የተ.የግ.ማ በታጠቅ ኢንዱስትሪ ዞን የሚገኝ የኢትዮጵያ UPVC ቧንቧ አምራች ሲሆን ለግንባታ፣ ለውሃ አገልግሎት እና ለመስኖ ዘርፎች የጫና እና የፍሳሽ ቧንቧ ስርዓቶችን ያመርታል።',
     about_mission_title: 'ተልእኮአችን',
     about_mission_desc: 'የኢትዮጵያን ውሃ እና መሰረተ ልማት አውታሮች የሚያጠናክሩ ደረጃቸውን የጠበቁ እና አስተማማኝ የቧንቧ መፍትሄዎችን ማቅረብ።',
     about_facility_title: 'ፋብሪካችን',
-    about_facility_desc: 'በተከት ኢንዱስትሪ ዞን የሚገኘው ፋብሪካችን ዘመናዊ የማምረቻ መስመሮች እና የውስጥ ጥራት ቁጥጥርን የያዘ ሲሆን በእያንዳንዱ ምርት ወጥ የግድግዳ ውፍረት እና የጫና ደረጃ ያረጋግጣል።',
+    about_facility_desc: 'በታጠቅ ኢንዱስትሪ ዞን የሚገኘው ፋብሪካችን ዘመናዊ የማምረቻ መስመሮች እና የውስጥ ጥራት ቁጥጥርን የያዘ ሲሆን በእያንዳንዱ ምርት ወጥ የግድግዳ ውፍረት እና የጫና ደረጃ ያረጋግጣል።',
     about_values_title: 'እሴቶቻችን',
     about_value_1: 'ምንም ማወላወል የሌለበት ጥራት',
     about_value_2: 'በእያንዳንዱ አቅርቦት አስተማማኝነት',
@@ -376,17 +379,18 @@ export const translations = {
     contact_form_submit: 'መልእክት ይላኩ',
     contact_form_success: 'የዋጋ ጥያቄዎ በWhatsApp ተዘጋጅቷል። መልእክቱን አይተው ይላኩ።',
     contact_info_title: 'ያግኙን',
-    contact_info_address: 'ተከት ኢንዱስትሪ ዞን፣ ቡራዩ፣ ኦሮሚያ፣ ኢትዮጵያ',
+    contact_info_address: 'ታጠቅ ኢንዱስትሪ ዞን፣ ሸገር ከተማ፣ ኦሮሚያ፣ ኢትዮጵያ',
     contact_info_phone: '+251 961 36 36 36',
     contact_info_email: 'yadennoplc@gmail.com',
-    contact_info_hours: 'ሰኞ – ቅዳሜ፦ 8፡00 ጥዋት – 6፡00 ማታ',
+    contact_info_email_2: 'hello@yadenno.com',
+    contact_info_hours: 'ሰኞ – ቅዳሜ፦ ከጠዋቱ 2፡00 – ምሽቱ 12፡00',
 
     footer_factory: 'ፋብሪካ',
-    footer_factory_address: 'ተከት ኢንዱስትሪ ዞን\nቡራዩ፣ ኦሮሚያ፣ ኢትዮጵያ',
+    footer_factory_address: 'ታጠቅ ኢንዱስትሪ ዞን\nሸገር ከተማ፣ ኦሮሚያ፣ ኢትዮጵያ',
     footer_working_hours: 'የስራ ሰዓት',
     footer_working_days: 'ሰኞ–ቅዳሜ',
-    footer_working_time: '8፡00 ጥዋት–6፡00 ማታ',
+    footer_working_time: 'ከጠዋቱ 2፡00 – ምሽቱ 12፡00',
     footer_rights: 'መብቱ በህግ የተጠበቀ ነው።',
-    footer_tagline: 'የUPVC ቧንቧ ስርዓቶች አምራች — ተከት ኢንዱስትሪ ዞን፣ ኢትዮጵያ',
+    footer_tagline: 'የUPVC ቧንቧ ስርዓቶች አምራች — ታጠቅ ኢንዱስትሪ ዞን፣ ኢትዮጵያ',
   },
 }

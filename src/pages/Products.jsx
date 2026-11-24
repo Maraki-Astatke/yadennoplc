@@ -3,7 +3,7 @@ import { products } from '../data/products.js'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Products() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   return (
     <div className="pt-20">
@@ -26,7 +26,7 @@ export default function Products() {
               <div className="h-48 sm:h-56 -mx-2 -mt-2 mb-4 overflow-hidden flex items-center justify-center">
                 <img src={product.image} alt={t(product.nameKey)} className="h-full w-full object-contain" />
               </div>
-              <h3 className="font-semibold text-lg text-primary mb-2">{t(product.nameKey)}</h3>
+              <h2 className="font-semibold text-lg text-primary mb-2">{t(product.nameKey)}</h2>
               <p className="text-base text-steel leading-relaxed mb-4 flex-1">
                 {t(product.descriptionKey)}
               </p>
@@ -47,7 +47,7 @@ export default function Products() {
               </dl>
 
               <Link
-                to="/contact"
+                to={localePath('/contact')}
                 className="mt-5 text-sm font-semibold text-accent hover:text-accent-dark inline-flex items-center gap-1 transition-colors"
               >
                 {t('products_learn_more')} →

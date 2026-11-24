@@ -3,13 +3,13 @@ import { Link, NavLink } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
 const LANGUAGES = [
-  { code: 'en', label: 'ENG' },
-  { code: 'am', label: 'AMH' },
+  { code: 'en', label: 'ENG', short: 'EN' },
+  { code: 'am', label: 'AMH', short: 'AM' },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { lang, changeLanguage, t } = useLanguage()
+  const { lang, t, localePath, basePath } = useLanguage()
 
   const navLinkClass = ({ isActive }) =>
     `relative text-xl sm:text-2xl font-bold transition-colors duration-200 ${isActive
@@ -23,11 +23,12 @@ export default function Navbar() {
       : 'text-primary hover:text-accent'
     }`
 
+  // Every link points to the page in the current language (/products or /am/products)
   const links = [
-    { to: '/', label: t('nav_home') },
-    { to: '/products', label: t('nav_products') },
-    { to: '/about', label: t('nav_about') },
-    { to: '/contact', label: t('nav_contact') },
+    { to: localePath('/'), label: t('nav_home'), isHome: true },
+    { to: localePath('/products'), label: t('nav_products') },
+    { to: localePath('/about'), label: t('nav_about') },
+    { to: localePath('/contact'), label: t('nav_contact') },
   ]
 
   return (
@@ -42,7 +43,7 @@ export default function Navbar() {
       <nav className="w-full px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto flex items-center justify-between h-[72px] sm:h-20">
         {/* Logo — far left. Text wordmark "YADENNO" is the primary brand mark;
             the small svg mark from src/assets is used as an accent icon. */}
-        <Link to="/" className="flex items-center shrink-0" onClick={() => setMobileOpen(false)}>
+        <Link to={localePath('/')} className="flex items-center shrink-0" onClick={() => setMobileOpen(false)}>
           <img src="/logo.webp" alt="Yadenno Plastics PLC" className="h-[82px] sm:h-[98px] w-auto opacity-100" />
         </Link>
 
@@ -50,7 +51,7 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {links.map((link) => (
             <li key={link.to}>
-              <NavLink to={link.to} className={navLinkClass} end={link.to === '/'}>
+              <NavLink to={link.to} className={navLinkClass} end={link.isHome}>
                 {link.label}
               </NavLink>
             </li>
@@ -59,20 +60,24 @@ export default function Navbar() {
 
         {/* Right side controls */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link to="/contact#quote" className="rounded-lg bg-primary px-5 py-2.5 font-bold text-white transition hover:bg-primary-light">
+          <Link to={`${localePath('/contact')}#quote`} className="rounded-lg bg-primary px-5 py-2.5 font-bold text-white transition hover:bg-primary-light">
             {t('nav_quote')}
           </Link>
 
-          {/* Language switch */}
-          <button
-            type="button"
-            onClick={() => changeLanguage(lang === 'en' ? 'am' : 'en')}
-            className="flex items-center gap-1 p-1 rounded-full text-sm font-mono font-bold bg-black/5 transition-colors duration-300 text-primary hover:bg-primary/10"
-            aria-label="Toggle language"
-          >
-            <span className={`px-2.5 py-1 rounded-full transition-colors ${lang === 'en' ? 'bg-primary text-white shadow-sm' : 'text-primary/70'}`}>EN</span>
-            <span className={`px-2.5 py-1 rounded-full transition-colors ${lang === 'am' ? 'bg-primary text-white shadow-sm' : 'text-primary/70'}`}>AM</span>
-          </button>
+          {/* Language switch: real links, so Google can follow them to the other language */}
+          <div className="flex items-center gap-1 p-1 rounded-full text-sm font-mono font-bold bg-black/5 text-primary">
+            {LANGUAGES.map((l) => (
+              <Link
+                key={l.code}
+                to={localePath(basePath, l.code)}
+                hrefLang={l.code}
+                aria-current={lang === l.code ? 'true' : undefined}
+                className={`px-2.5 py-1 rounded-full transition-colors ${lang === l.code ? 'bg-primary text-white shadow-sm' : 'text-primary/70 hover:bg-primary/10'}`}
+              >
+                {l.short}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Mobile menu toggle */}
@@ -102,7 +107,7 @@ export default function Navbar() {
             <NavLink
               key={link.to}
               to={link.to}
-              end={link.to === '/'}
+              end={link.isHome}
               onClick={() => setMobileOpen(false)}
               className={mobileNavLinkClass}
             >
@@ -110,24 +115,26 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <Link to="/contact" onClick={() => setMobileOpen(false)} className="border-2 border-accent text-primary px-5 py-2 rounded-md font-medium text-center w-full">
+          <Link to={localePath('/contact')} onClick={() => setMobileOpen(false)} className="border-2 border-accent text-primary px-5 py-2 rounded-md font-medium text-center w-full">
             {t('nav_quote')}
           </Link>
 
           <div className="flex justify-end pt-2 border-t border-black/5">
             <div className="flex gap-2">
               {LANGUAGES.map((l) => (
-                <button
+                <Link
                   key={l.code}
-                  type="button"
-                  onClick={() => changeLanguage(l.code)}
+                  to={localePath(basePath, l.code)}
+                  hrefLang={l.code}
+                  onClick={() => setMobileOpen(false)}
+                  aria-current={lang === l.code ? 'true' : undefined}
                   className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold border transition-colors duration-200 ${lang === l.code
                     ? 'bg-accent text-white border-accent'
                     : 'border-primary/20 text-primary'
                     }`}
                 >
                   {l.label}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

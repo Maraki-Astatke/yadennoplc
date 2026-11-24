@@ -41,9 +41,9 @@ export default function Contact() {
 
             <div>
               <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-accent mb-1">
-                Factory
+                {t('footer_factory')}
               </h3>
-              <p className="font-semibold text-primary leading-relaxed">Ashewa Meda, Tatek Industry Zone, Sheger City</p>
+              <p className="font-semibold text-primary leading-relaxed">{t('contact_info_address')}</p>
             </div>
 
             <div className="border-l-4 border-accent pl-4">
