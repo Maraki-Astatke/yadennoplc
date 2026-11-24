@@ -1,21 +1,38 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { translations } from '../data/translations.js'
 
 const LanguageContext = createContext(null)
 
 /**
- * Provides the active language (English / Amharic) and a translate
- * helper `t(key)` to the whole app. Persists the choice in localStorage.
+ * The language comes from the page address:
+ *   /am, /am/products, /am/about, /am/contact → Amharic
+ *   everything else → English
+ * so each language has its own pages that Google can find.
  */
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    if (typeof window === 'undefined') return 'en'
-    return window.localStorage.getItem('yadenno-lang') || 'en'
-  })
+  const { pathname, hash } = useLocation()
+  const navigate = useNavigate()
+
+  const lang = pathname === '/am' || pathname.startsWith('/am/') ? 'am' : 'en'
+
+  // The page address without the /am part, e.g. /am/products → /products
+  const basePath = lang === 'am' ? pathname.slice(3) || '/' : pathname
+
+  // Builds the right address for a language, e.g. localePath('/contact') → /am/contact in Amharic
+  const localePath = (path, target = lang) => {
+    if (target !== 'am') return path
+    return path === '/' ? '/am' : `/am${path}`
+  }
+
+  // Tell the browser (and Google) which language the page is in
+  useEffect(() => {
+    document.documentElement.lang = lang
+  }, [lang])
 
   const changeLanguage = (next) => {
-    setLang(next)
-    window.localStorage.setItem('yadenno-lang', next)
+    if (next === lang) return
+    navigate(localePath(basePath, next) + hash)
   }
 
   const t = (key) => {
@@ -24,7 +41,7 @@ export function LanguageProvider({ children }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ lang, changeLanguage, t }}>
+    <LanguageContext.Provider value={{ lang, changeLanguage, t, localePath, basePath }}>
       {children}
     </LanguageContext.Provider>
   )

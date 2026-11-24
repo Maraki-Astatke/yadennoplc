@@ -9,10 +9,17 @@ export default function App() {
   return (
     <Layout>
       <Routes>
+        {/* English */}
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* Amharic */}
+        <Route path="/am" element={<Home />} />
+        <Route path="/am/products" element={<Products />} />
+        <Route path="/am/about" element={<About />} />
+        <Route path="/am/contact" element={<Contact />} />
       </Routes>
     </Layout>
   )

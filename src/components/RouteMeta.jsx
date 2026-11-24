@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext.jsx'
 import { PAGE_META, OG_LOCALE, localePath, absoluteUrl } from '../data/pageMeta.js'
 
 function setAttr(selector, attribute, value) {
+  if (typeof document === 'undefined') return
   const element = document.head.querySelector(selector)
   if (element) element.setAttribute(attribute, value)
 }
