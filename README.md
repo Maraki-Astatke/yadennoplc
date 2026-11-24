@@ -6,7 +6,7 @@ English/Amharic language switch.
 
 ## Vercel deployment
 
-This source package is ready for the existing Vercel project connected to `yade.vercel.app`.
+This source package deploys to production at `https://yadenno.com`. `vercel.json` configures 308 permanent redirects from `yade.vercel.app` (and all `*.vercel.app` domains) to `https://yadenno.com`.
 
 - Framework preset: Vite
 - Install command: `npm ci`

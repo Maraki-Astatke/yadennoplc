@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
-const BASE_URL = 'https://yade.vercel.app'
+const BASE_URL = 'https://yadenno.com'
 const ROUTES = {
   '/': {
     title: 'UPVC Pipe Manufacturer in Ethiopia | Yadenno Plastics PLC',
@@ -23,6 +23,7 @@ const ROUTES = {
 }
 
 function setMeta(selector, attribute, value) {
+  if (typeof document === 'undefined') return
   const element = document.head.querySelector(selector)
   if (element) element.setAttribute(attribute, value)
 }
@@ -33,7 +34,7 @@ export default function RouteMeta() {
 
   useEffect(() => {
     const route = ROUTES[pathname] || ROUTES['/']
-    const url = `${BASE_URL}${pathname === '/' ? '' : pathname}`
+    const url = `${BASE_URL}${pathname}`
     document.title = route.title
     document.documentElement.lang = lang
     setMeta('meta[name="description"]', 'content', route.description)
