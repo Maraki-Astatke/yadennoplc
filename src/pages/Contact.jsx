@@ -71,13 +71,13 @@ export default function Contact() {
           <div className="overflow-hidden border border-white/10 bg-white/5 aspect-[16/5] min-h-[200px]">
             <iframe
               title={t('contact_map_title')}
-              src="https://www.openstreetmap.org/export/embed.html?bbox=38.60%2C8.85%2C39.05%2C9.15&layer=mapnik&marker=9.02%2C38.74"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=38.627822%2C9.031928%2C38.647822%2C9.043928&layer=mapnik&marker=9.037928%2C38.637822"
               className="h-full w-full border-0"
               loading="lazy"
             />
           </div>
           <a
-            href="https://www.openstreetmap.org/?mlat=9.02&mlon=38.74#map=12/9.02/38.74"
+            href="https://www.google.com/maps/dir/?api=1&destination=9.037928,38.637822"
             target="_blank"
             rel="noreferrer"
             className="mt-4 inline-flex text-sm text-accent hover:text-white transition-colors"

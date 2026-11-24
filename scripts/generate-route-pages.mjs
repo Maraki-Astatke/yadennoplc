@@ -34,6 +34,12 @@ const business = {
       closes: '18:00',
     },
   ],
+    geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 9.037928,
+    longitude: 38.637822,
+  },
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=9.037928,38.637822',
   areaServed: { '@type': 'Country', name: 'Ethiopia' },
   contactPoint: [
     { '@type': 'ContactPoint', telephone: '+251961363636', email: 'hello@yadenno.com', contactType: 'sales', availableLanguage: ['English', 'Amharic'] },
