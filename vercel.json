@@ -1,12 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "yadennoplc.vercel.app" }],
-      "destination": "https://yadenno.com/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     { "source": "/products", "destination": "/products/index.html" },
     { "source": "/about", "destination": "/about/index.html" },
