@@ -1,12 +1,49 @@
 {
   "rewrites": [
-    { "source": "/products", "destination": "/products/index.html" },
-    { "source": "/about", "destination": "/about/index.html" },
-    { "source": "/contact", "destination": "/contact/index.html" },
-    { "source": "/am", "destination": "/am/index.html" },
-    { "source": "/am/products", "destination": "/am/products/index.html" },
-    { "source": "/am/about", "destination": "/am/about/index.html" },
-    { "source": "/am/contact", "destination": "/am/contact/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/products",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/am",
+      "destination": "/am/index.html"
+    },
+    {
+      "source": "/am/products",
+      "destination": "/am/products/index.html"
+    },
+    {
+      "source": "/am/about",
+      "destination": "/am/about/index.html"
+    },
+    {
+      "source": "/am/contact",
+      "destination": "/am/contact/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<subdomain>.+)\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://yadenno.com/:path*",
+      "permanent": true
+    }
   ]
 }
