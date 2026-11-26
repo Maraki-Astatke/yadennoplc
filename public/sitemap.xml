@@ -4,49 +4,49 @@
   <url>
     <loc>https://yadenno.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/" />
   </url>
   <url>
-    <loc>https://yadenno.com/am</loc>
+    <loc>https://yadenno.com/am/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/" />
   </url>
   <url>
-    <loc>https://yadenno.com/products</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/products" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/products" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/products" />
+    <loc>https://yadenno.com/products/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/products/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/products/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/products/" />
   </url>
   <url>
-    <loc>https://yadenno.com/am/products</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/products" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/products" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/products" />
+    <loc>https://yadenno.com/am/products/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/products/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/products/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/products/" />
   </url>
   <url>
-    <loc>https://yadenno.com/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/about" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/about" />
+    <loc>https://yadenno.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/about/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/about/" />
   </url>
   <url>
-    <loc>https://yadenno.com/am/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/about" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/about" />
+    <loc>https://yadenno.com/am/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/about/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/about/" />
   </url>
   <url>
-    <loc>https://yadenno.com/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/contact" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/contact" />
+    <loc>https://yadenno.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/contact/" />
   </url>
   <url>
-    <loc>https://yadenno.com/am/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/contact" />
-    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/contact" />
+    <loc>https://yadenno.com/am/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yadenno.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="am" href="https://yadenno.com/am/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yadenno.com/contact/" />
   </url>
 </urlset>

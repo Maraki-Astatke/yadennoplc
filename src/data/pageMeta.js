@@ -56,4 +56,4 @@ export const localePath = (path, lang) => {
 }
 
 // '/' → 'https://yadenno.com/', '/am/products' → 'https://yadenno.com/am/products'
-export const absoluteUrl = (path) => (path === '/' ? `${BASE_URL}/` : `${BASE_URL}${path}`)
+export const absoluteUrl = (path) => (path === '/' ? `${BASE_URL}/` : `${BASE_URL}${path}/`)

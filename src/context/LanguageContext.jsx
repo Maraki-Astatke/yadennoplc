@@ -11,7 +11,8 @@ const LanguageContext = createContext(null)
  * so each language has its own pages that Google can find.
  */
 export function LanguageProvider({ children }) {
-  const { pathname, hash } = useLocation()
+  const { pathname: rawPath, hash } = useLocation()
+  const pathname = rawPath.length > 1 ? rawPath.replace(/\/+$/, '') : rawPath
   const navigate = useNavigate()
 
   const lang = pathname === '/am' || pathname.startsWith('/am/') ? 'am' : 'en'
