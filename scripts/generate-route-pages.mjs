@@ -12,11 +12,11 @@ const business = {
   '@type': 'LocalBusiness',
   '@id': `${BASE_URL}/#business`,
   name: 'Yadenno Plastics PLC',
-  legalName: 'Yadenno Plastics Private Limited Company',
+  legalName: 'Yadeno Tiers and Plastics Work PLC',
   url: `${BASE_URL}/`,
   logo: `${BASE_URL}/logo.webp`,
   image: `${BASE_URL}/og-image.jpg`,
-  description: 'Yadenno Plastics PLC manufactures certified UPVC pressure and sewerage pipes from 50–250 mm and PN4–PN16 in Ethiopia.',
+  description: 'Ethiopian manufacturer of uPVC pressure and drainage pipes, PN4–PN16, 50–250 mm, 6 m lengths. Wholesale only.',
   telephone: '+251961363636',
   email: 'hello@yadenno.com',
   address: {
@@ -34,17 +34,18 @@ const business = {
       closes: '18:00',
     },
   ],
-    geo: {
+  geo: {
     '@type': 'GeoCoordinates',
     latitude: 9.037928,
     longitude: 38.637822,
   },
   hasMap: 'https://www.google.com/maps/search/?api=1&query=9.037928,38.637822',
-  areaServed: { '@type': 'Country', name: 'Ethiopia' },
+  areaServed: { '@type': 'Country', 'name': 'Ethiopia' },
   contactPoint: [
     { '@type': 'ContactPoint', telephone: '+251961363636', email: 'hello@yadenno.com', contactType: 'sales', availableLanguage: ['English', 'Amharic'] },
     { '@type': 'ContactPoint', telephone: '+251967363636', email: 'yadennoplc@gmail.com', contactType: 'sales', availableLanguage: ['English', 'Amharic'] },
   ],
+  sameAs: ['https://www.facebook.com/<your-page>'],
 }
 
 // The kind of page, for Google
@@ -105,10 +106,10 @@ for (const [path, languages] of Object.entries(PAGE_META)) {
       .replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
       .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
       .replace(/<meta name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${meta.description}" />`)
-      .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, linkTags)
+      .replace(/<link rel="canonical" href="[^"]*"\s*\/?>(?:\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/?>)*/g, linkTags)
       .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${meta.title}" />`)
       .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${meta.description}" />`)
-      .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, ogTags)
+      .replace(/<meta property="og:url" content="[^"]*"\s*\/?>(?:\s*<meta property="og:locale(?::alternate)?" content="[^"]*"\s*\/?>)*/g, ogTags)
       .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">\n${jsonLdString}\n</script>`)
       .replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
 

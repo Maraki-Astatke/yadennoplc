@@ -71,6 +71,7 @@ export default function Navbar() {
                 key={l.code}
                 to={localePath(basePath, l.code)}
                 hrefLang={l.code}
+                lang={l.code}
                 aria-current={lang === l.code ? 'true' : undefined}
                 className={`px-2.5 py-1 rounded-full transition-colors ${lang === l.code ? 'bg-primary text-white shadow-sm' : 'text-primary/70 hover:bg-primary/10'}`}
               >
@@ -126,6 +127,7 @@ export default function Navbar() {
                   key={l.code}
                   to={localePath(basePath, l.code)}
                   hrefLang={l.code}
+                  lang={l.code}
                   onClick={() => setMobileOpen(false)}
                   aria-current={lang === l.code ? 'true' : undefined}
                   className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold border transition-colors duration-200 ${lang === l.code
